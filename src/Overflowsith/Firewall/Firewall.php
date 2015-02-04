@@ -14,7 +14,7 @@ class Firewall
                 return true;
                 break;
             case 'enforcing':
-                return self::isInWhiteList($ip);
+                return self::isInWhiteList($ip) && !(self::isInBlackList($ip));
                 break;
             case 'permissive':
                 return !(self::isInBlackList($ip));
