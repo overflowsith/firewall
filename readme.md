@@ -22,7 +22,7 @@ This firewall package can be use in the App::before filter
 App::before(function($request)
 {
     if (Firewall::isNotAllowed($request->ip())) {
-        return View::make('firewall::sorry');
+        return Firewall::renderAccessDenied();
     }
 });
 ```
