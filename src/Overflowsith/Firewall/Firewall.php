@@ -24,6 +24,10 @@ class Firewall
         }
     }
 
+    public static function isNotAllowed($ip) {
+        return !self::isAllowed($ip);
+    }
+
     public static function isInWhiteList($ip)
     {
         return self::check(Config::get('firewall::config.whitelist', []), $ip);
