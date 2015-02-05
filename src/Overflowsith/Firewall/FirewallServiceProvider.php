@@ -20,6 +20,10 @@ class FirewallServiceProvider extends ServiceProvider {
 	public function boot()
 	{
 		$this->package('overflowsith/firewall', 'firewall');
+		$this->app->booting(function() {
+			$loader = \Illuminate\Foundation\AliasLoader::getInstance();
+			$loader->alias('Firewall', 'Overflowsith\Firewall\Firewall');
+		});
 	}
 
 	/**
