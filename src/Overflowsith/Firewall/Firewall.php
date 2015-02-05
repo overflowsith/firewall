@@ -3,6 +3,7 @@ namespace Overflowsith\Firewall;
 
 use Config;
 use Str;
+use View;
 
 class Firewall
 {
@@ -37,6 +38,12 @@ class Firewall
     {
         return self::check(Config::get('firewall::config.blacklist', []), $ip);
     }
+
+    public static function renderAccessDenied($view = 'firewall::sorry', $viewParameters = [])
+    {
+        return View::make($view, $viewParameters);
+    }
+
 
     private static function check($source, $ip)
     {
