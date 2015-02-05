@@ -27,3 +27,19 @@ App::before(function($request)
 });
 ```
 
+## Configuration
+
+### Firewall status
+
+  * disabled: every IP is allowed
+  * permissive: only IP addresses that are not in the blacklist are allowed
+  * enforcing: an IP must be in the whitelist and not in the blacklist
+
+### Whitelist and blacklist
+
+You can set an array of IP addresses with or without wildcards, for example
+
+```php
+   '127.0.0.1',
+   '192.168.*',
+```
