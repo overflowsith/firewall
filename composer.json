@@ -14,7 +14,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Overflowsith\\Firewall\\": "src/"
+            "Overflowsith\\Firewall\\": "src/Overflowsith/Firewall"
         }
     },
     "minimum-stability": "stable"
